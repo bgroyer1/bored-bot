@@ -20,7 +20,7 @@ async function fetchBoredBotData() {
     if (!res.ok) {
       throw Error(`Response Failed: ${res.statusText}`);
     }
-    const data = res.json();
+    const data = await res.json();
     return data;
   } catch (err) {
     console.error("Error");
