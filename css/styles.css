@@ -3,28 +3,34 @@ body {
   font-family: "Roboto Mono", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #6096BA;
+  background-color: #274c77;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
   color: #f3f3f3;
 }
 
 .container {
-  display: grid;  justify-items: center;
+  display: grid;
+  justify-items: center;
   padding: 5rem 1rem;
+  min-height: 400px;
   text-align: center;
   grid-template-columns: 1fr;
-  grid-template-areas: 
-  'h1'
-  'bt'
-  'h2'
-  'ul';
-  gap: 3rem;
-  background-color: #274C77;
+  grid-template-areas:
+    "h1"
+    "bt"
+    "ti"
+    "ul";
+  background-color: #274c77;
   border-radius: 5px;
-  border: 3px solid black;
 }
 
 #activity-h1 {
@@ -34,13 +40,21 @@ h1, h2, h3, h4, h5, h6, p {
   text-shadow: 1px 1px 1px #333333;
 }
 
+#activity-title {
+  grid-area: ti;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 5rem;
+}
+
 #activity-h2 {
-  grid-area: h2;
-  justify-self: center;
   font-size: 1.25rem;
   text-wrap: wrap;
-  margin: 1em;
-  align-self: center;
+  text-align: center;
+  word-wrap: break-word;
+  padding: 0 1rem;
 }
 
 #activity-ul {
@@ -61,7 +75,7 @@ li {
 }
 
 #activity-btn {
-  grid-area: 'bt';
+  grid-area: bt;
   border-radius: 50%;
   width: 100px;
   height: 100px;
@@ -77,24 +91,31 @@ li {
 }
 
 @media (min-width: 600px) {
-  .container {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: 
-    'h1 h1 h1' 
-    '.. bt ..'
-    'h2 h2 ul'
-    ;
+  body {
+    display: flex;
+    justify-content: center;
     align-items: center;
+    background-color: #6096ba;
+  }
+
+  .container {
+    width: 800px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "h1 h1 h1"
+      ".. bt .."
+      "ti ti ul";
+    border: 3px solid black;
+    align-content: space-between;
+    justify-content: center;
     margin: 1em;
   }
 
-  #activity-h1 {
-    justify-self: center;
+  #activity-title {
+    min-height: 6rem;
   }
 
-  #activity-btn {
-    grid-column: 2;
-    align-self: center;
-    justify-self: center;
+  #activity-title h2 {
+    font-size: 1.5rem;
   }
 }

@@ -5,7 +5,7 @@ document.querySelector("#activity-btn").addEventListener("click", async () => {
   console.log(data)
   if (data) {
     document.querySelector("#activity-h2").innerText = data.activity;
-    document.querySelector("#activity-cost").innerText = `Cost: $${data.price}`;
+    document.querySelector("#activity-cost").innerText = `Cost: $${data.price.toFixed(2)}`;
     document.querySelector("#activity-participants").innerText = `Participants: ${data.participants}`;
   } else {
     document.querySelector(
